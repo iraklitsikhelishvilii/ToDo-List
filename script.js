@@ -59,9 +59,14 @@ function CtreateBox() {
     box1.appendChild(p);
 
     let p2 = document.createElement("P");
-    let date = new Date();
-    let FormatedDate5 = date.toDateString();
-    p2.textContent = FormatedDate5;
+    creationTime = new Date();
+    let day = creationTime.toLocaleDateString("en-US", { weekday: "long" });
+    let time = creationTime.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+    p2.textContent = `${day} at ${time}`;
     p2.classList.add("box1_p_light");
     box1.appendChild(p2);
 
