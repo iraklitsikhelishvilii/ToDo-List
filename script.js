@@ -31,6 +31,7 @@ function CtreateBox() {
   let container_bottom_box = document.getElementById("container_bottom_box");
   let form = document.getElementById("form");
   let input = document.getElementById("input");
+  loadTasks();
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let validation = input.value.trim();
@@ -78,7 +79,69 @@ function CtreateBox() {
     img.addEventListener("click", (event) => {
       event.preventDefault();
       div1.remove();
+      saveTasks();
     });
+    saveTasks();
   });
 }
+function saveTasks() {
+  let tasks = [];
+  let taskElements = document.querySelectorAll(".new_div");
+  taskElements.forEach((taskElement) => {
+    let text = taskElement.querySelector(".box1_p_dark").textContent;
+    let date = taskElement.querySelector(".box1_p_light").textContent;
+    let checkbox = taskElement.querySelector("input[type='checkbox']").checked;
+
+    tasks.push({ text, date, checkbox });
+  });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+function loadTasks() {
+  let tasks = JSON.parse(localStorage.getItem("tasks"));
+  if (tasks) {
+    tasks.forEach((task) => {
+      let div1 = document.createElement("div");
+      div1.classList.add("new_div");
+      container_bottom_box.appendChild(div1);
+
+      let box1 = document.createElement("div");
+      box1.classList.add("box1");
+      div1.appendChild(box1);
+
+      let box2 = document.createElement("div");
+      box2.classList.add("box2");
+      div1.appendChild(box2);
+
+      let p = document.createElement("P");
+      p.textContent = task.text;
+      p.classList.add("box1_p_dark");
+      box1.appendChild(p);
+
+      let p2 = document.createElement("P");
+      p2.textContent = task.date;
+      p2.classList.add("box1_p_light");
+      box1.appendChild(p2);
+
+      let checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = task.checkbox;
+      box2.appendChild(checkbox);
+
+      let btn = document.createElement("button");
+      btn.classList.add("btn_class");
+      box2.appendChild(btn);
+
+      let img = document.createElement("img");
+      img.src = "./images/akar-icons_trash-can.svg";
+      btn.appendChild(img);
+
+      img.addEventListener("click", (event) => {
+        event.preventDefault();
+        div1.remove();
+        saveTasks();
+      });
+    });
+  }
+}
+
 CtreateBox();
