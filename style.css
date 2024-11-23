@@ -166,6 +166,9 @@ button {
     justify-content: center;
     align-items: center;
   }
+  .container_bottom_box {
+    height: 350px;
+  }
   .container_top_box {
     background-size: 360px;
     width: 360px;
