@@ -4,14 +4,14 @@ function Time() {
   let time_p_hours = document.getElementById("time_p_hours");
   let time_p_minutes = document.getElementById("time_p_minutes");
   let AM_or_PM = document.getElementById("AM_or_PM");
-  let weekday = ["Mon", "Tue", "Weds", "thu", "Fri", "Sat", "sun"];
+  let weekday = ["sun", "Mon", "Tue", "Weds", "thu", "Fri", "Sat"];
 
   let date = new Date();
 
   let FormatedDate = date.getDate();
   days_p.textContent = FormatedDate;
 
-  let FormatedDate2 = weekday[date.getDay() - 1];
+  let FormatedDate2 = weekday[date.getDay()];
   days_p2.textContent = FormatedDate2;
 
   let FormatedDate3 = date.getHours();
