@@ -78,7 +78,6 @@ h1 {
 .container_bottom_box {
   height: 270px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -117,12 +116,12 @@ button {
   background: #20eeb0;
 }
 .new_div {
-  width: 373px;
+  width: 370px;
   height: 44px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 36px;
+  margin-top: 25px;
 }
 .box1 {
   display: flex;
@@ -132,7 +131,6 @@ button {
 .box2 {
   display: flex;
   justify-content: center;
-  gap: 14px;
 }
 .box1_p_dark {
   color: #0d0d0d;
@@ -143,4 +141,9 @@ button {
   color: #888;
   font-size: 14px;
   font-weight: 400;
+}
+.btn_class {
+  width: 40px;
+  border: none;
+  background-color: transparent;
 }

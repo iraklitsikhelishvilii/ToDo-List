@@ -43,26 +43,38 @@ function CtreateBox() {
     div1.classList.add("new_div");
     container_bottom_box.appendChild(div1);
     input.value = "";
+
     let box1 = document.createElement("div");
     box1.classList.add("box1");
     div1.appendChild(box1);
+
     let box2 = document.createElement("div");
     box2.classList.add("box2");
     div1.appendChild(box2);
+
     let p = document.createElement("P");
     p.textContent = inputText;
     p.classList.add("box1_p_dark");
     box1.appendChild(p);
+
     let p2 = document.createElement("P");
-    p2.textContent = inputText;
+    let date = new Date();
+    let FormatedDate5 = date.toDateString();
+    p2.textContent = FormatedDate5;
     p2.classList.add("box1_p_light");
     box1.appendChild(p2);
+
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     box2.appendChild(checkbox);
+
+    let btn = document.createElement("button");
+    btn.classList.add("btn_class");
+    box2.appendChild(btn);
+
     let img = document.createElement("img");
     img.src = "./images/akar-icons_trash-can.svg";
-    box2.appendChild(img);
+    btn.appendChild(img);
     img.addEventListener("click", (event) => {
       event.preventDefault();
       div1.remove();
