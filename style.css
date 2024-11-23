@@ -131,6 +131,7 @@ button {
 .box2 {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .box1_p_dark {
   color: #0d0d0d;
@@ -167,7 +168,7 @@ button {
     align-items: center;
   }
   .container_bottom_box {
-    height: 460px;
+    height: 350px;
   }
   .container_top_box {
     background-size: 360px;
