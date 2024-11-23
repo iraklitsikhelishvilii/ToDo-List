@@ -94,7 +94,7 @@ form {
   display: flex;
   align-items: center;
   background-color: #ebeff2;
-  width: 275px;
+  width: 295px;
   border-radius: 5px;
 }
 input {
@@ -146,4 +146,48 @@ button {
   width: 40px;
   border: none;
   background-color: transparent;
+}
+@media (max-width: 650px) {
+  .main_container {
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    display: none;
+  }
+}
+@media (max-width: 445px) {
+  .main_container {
+    width: auto;
+  }
+  .container {
+    height: 100vh;
+    width: 360px;
+    justify-content: center;
+    align-items: center;
+  }
+  .container_top_box {
+    background-size: 360px;
+    width: 360px;
+    height: 170px;
+  }
+  .time_p {
+    font-size: 25px;
+  }
+  .days_p {
+    font-size: 13px;
+  }
+  .input_box {
+    width: 225px;
+  }
+  button {
+    padding: 10px;
+  }
+  .plus_img {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .new_div {
+    width: 320px;
+  }
 }
